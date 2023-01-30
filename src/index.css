@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'MarkPro';
+  font-weight: 500;
+  font-display: swap;
+  src: local('MarkPro Medium'),
+    url('../public/fonts/MarkPro/woff2/MarkPro-Medium.woff2') format('woff2'),
+    url('../public/fonts/MarkPro/woff/MarkPro-Meduim.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  font-weight: 800;
+  font-display: swap;
+  src: local('MarkPro Heavy'),
+    url('../public/fonts/MarkPro/woff2/MarkPro-Heavy.woff2') format('woff2'),
+    url('../public/fonts/MarkPro/woff/MarkPro-Heavy.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 900;
+  font-display: swap;
+  src: local('Pretendard Black'),
+    url('../public/fonts/Pretendard/woff2/Pretendard-Black.woff2') format('woff2'),
+    url('../public/fonts/Pretendard/woff/Pretendard-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 800;
+  font-display: swap;
+  src: local('Pretendard ExtraBold'),
+    url('../public/fonts/Pretendard/woff2/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('../public/fonts/Pretendard/woff/Pretendard-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-display: swap;
+  src: local('Pretendard Bold'),
+    url('../public/fonts/Pretendard/woff2/Pretendard-Bold.woff2') format('woff2'),
+    url('../public/fonts/Pretendard/woff/Pretendard-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-display: swap;
+  src: local('Pretendard SemiBold'),
+    url('../public/fonts/Pretendard/woff2/Pretendard-SemiBold.woff2') format('woff2'),
+    url('../public/fonts/Pretendard/woff/Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-display: swap;
+  src: local('Pretendard Medium'),
+    url('../public/fonts/Pretendard/woff2/Pretendard-Medium.woff2') format('woff2'),
+    url('../public/fonts/Pretendard/woff/Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-display: swap;
+  src: local('Pretendard Regular'),
+    url('../public/fonts/Pretendard/woff2/Pretendard-Regular.woff2') format('woff2'),
+    url('../public/fonts/Pretendard/woff/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-display: swap;
+  src: local('Pretendard Light'),
+    url('../public/fonts/Pretendard/woff2/Pretendard-Light.woff2') format('woff2'),
+    url('../public/fonts/Pretendard/woff/Pretendard-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 200;
+  font-display: swap;
+  src: local('Pretendard ExtraLight'),
+    url('../public/fonts/Pretendard/woff2/Pretendard-ExtraLight.woff2') format('woff2'),
+    url('../public/fonts/Pretendard/woff/Pretendard-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 100;
+  font-display: swap;
+  src: local('Pretendard Thin'),
+    url('../public/fonts/Pretendard/woff2/Pretendard-Thin.woff2') format('woff2'),
+    url('../public/fonts/Pretendard/woff/Pretendard-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MarkPro-Heavy';
+  src: local('MarkHeavy'), url('../public/fonts/MarkPro/MarkHeavy.ttf') format('ttf');
+}
+
+button:focus {
+  outline: none;
+}
+
+input {
+  --tw-ring-shadow: 0 0 #000 !important;
+}
+
+* {
+  min-height: 0;
+  min-width: 0;
+}
