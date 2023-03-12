@@ -1,40 +1,16 @@
 import '@/index.css'
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import React, { lazy } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import reportWebVitals from '@/reportWebVitals'
 
-const Home = lazy(() => import('@/pages/Home'))
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-])
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      staleTime: 6 * 1000 * 5,
-    },
-  },
-})
+import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <App />
   </React.StrictMode>,
 )
 
