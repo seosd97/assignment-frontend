@@ -4,7 +4,7 @@ import HomeMenu from '@/components/HomeMenu'
 import LoginMenu from '@/components/LoginMenu'
 import useLogin from '@/shared/hooks/useLogin'
 
-const Home = () => {
+const Home: React.FC = () => {
   const { hasMetaMask, hasLogin } = useLogin()
   const MenuComponent = useMemo(() => (hasLogin ? <HomeMenu /> : <LoginMenu />), [hasLogin])
 

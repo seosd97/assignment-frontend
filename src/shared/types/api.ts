@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { API_ENDPOINT, NonceApiType, TokenApiType } from './constants'
+import { API_ENDPOINT, NonceApiType, OwnedNFTApiType, TokenApiType } from './constants'
 
 const getNonce = async (publicAddress: string) =>
   await axios.get<NonceApiType>(`${API_ENDPOINT}/users/nonce`, {
@@ -16,7 +16,7 @@ const getToken = async (publicAddress: string, signature: string) =>
   })
 
 const getOwnedNFT = async (token: string) =>
-  await axios.get(`${API_ENDPOINT}/users/nft`, {
+  await axios.get<OwnedNFTApiType>(`${API_ENDPOINT}/users/nfts`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
