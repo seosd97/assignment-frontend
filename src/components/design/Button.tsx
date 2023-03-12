@@ -50,7 +50,8 @@ const Button = ({
   disable = false,
   type = 'button',
 }: IButtonProps) => {
-  const defaultButtonClass = 'w-full rounded font-medium cursor-pointer leading-normal shadow-sm '
+  const defaultButtonClass =
+    'w-full rounded font-medium cursor-pointer leading-normal shadow-sm px-3'
 
   return (
     <button
