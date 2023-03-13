@@ -1,13 +1,12 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import React, { lazy } from 'react'
+import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+import Home from './pages/Home'
 import NFTPage from './pages/NFT'
 import TransferPage from './pages/Transfer'
 import LoginProvider from './shared/providers/LoginProvider'
-
-const Home = lazy(() => import('@/pages/Home'))
 
 const router = createBrowserRouter([
   {

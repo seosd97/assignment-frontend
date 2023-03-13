@@ -5,12 +5,13 @@ import LoginMenu from '@/components/LoginMenu'
 import useLogin from '@/shared/hooks/useLogin'
 
 const Home: React.FC = () => {
-  const { hasMetaMask, hasLogin } = useLogin()
+  const { hasMetaMask, hasLogin, warning } = useLogin()
   const MenuComponent = useMemo(() => (hasLogin ? <HomeMenu /> : <LoginMenu />), [hasLogin])
 
   return (
     <div className="flex flex-col items-center">
       <h1 className="my-36 font-bold text-5xl text-hcPaletteYellow500">KONKRIT</h1>
+      {warning && <span className="my-3 text-sm text-yellow-400">{`${warning}`}</span>}
       {hasMetaMask ? (
         MenuComponent
       ) : (
