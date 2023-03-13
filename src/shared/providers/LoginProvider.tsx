@@ -48,19 +48,32 @@ const LoginProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     if (!data) return
 
     const parsedData = JSON.parse(data) as LoginDataType
-    // eslint-disable-next-line prettier/prettier
-    ;(async () => {
-      if (!window.ethereum) return
-
-      const provider = new ethers.providers.Web3Provider(window.ethereum)
-      const accounts = await provider.listAccounts()
-      if ((accounts?.[0] ?? '').toLowerCase() !== parsedData.publicAddress.toLowerCase()) {
-        setWarning('The connected address is not to same MetaMask')
-      }
-    })()
-
     setLoginData(parsedData)
   }, [])
+
+  useEffect(() => {
+    // eslint-disable-next-line prettier/prettier
+    ;(async () => {
+      if (!window.ethereum || !loginData?.publicAddress) return
+
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
+      try {
+        const accounts = await provider.listAccounts()
+        const account = accounts?.[0] ?? ''
+        console.log(account)
+        console.log(account.toLowerCase() !== loginData.publicAddress.toLowerCase())
+        if (!account) return
+
+        let msg = ''
+        if (account.toLowerCase() !== loginData.publicAddress.toLowerCase()) {
+          msg = 'The connected address is not to same MetaMask'
+        }
+        setWarning(msg)
+      } catch (e) {
+        console.error(e)
+      }
+    })()
+  }, [loginData?.publicAddress])
 
   const ctx: ILoginContextProps = {
     hasMetaMask: !!window.ethereum,
