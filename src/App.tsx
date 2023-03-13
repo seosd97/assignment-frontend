@@ -4,6 +4,7 @@ import React, { lazy } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import NFTPage from './pages/NFT'
+import TransferPage from './pages/Transfer'
 import LoginProvider from './shared/providers/LoginProvider'
 
 const Home = lazy(() => import('@/pages/Home'))
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: '/nfts',
     element: <NFTPage />,
+  },
+  {
+    path: '/:id/transfer',
+    element: <TransferPage />,
   },
 ])
 

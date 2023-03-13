@@ -48,6 +48,10 @@ export type OwnedNFTApiType = {
   }
 }
 
+export type TransferEvent = {
+  transactionHash: string
+}
+
 export const API_ENDPOINT = 'https://lrvalrdo8k.execute-api.us-east-1.amazonaws.com/Prod'
 
 export const LOGIN_DATA_STORAGE_KEY = 'LOGIN_DATA_STORAGE_KEY'

@@ -21,10 +21,35 @@ const LoginProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const hasLogin = useMemo(() => !!loginData, [loginData])
 
   useEffect(() => {
-    const data = localStorage.getItem(LOGIN_DATA_STORAGE_KEY)
-    if (!data) return
+    if (!window.ethereum) return
+    const callback = (accounts: string[]) => console.log(accounts)
 
-    setLoginData(JSON.parse(data) as LoginDataType)
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: Unreachable code error
+    window.ethereum?.on('accountsChanged', callback)
+
+    return () => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore: Unreachable code error
+      window.ethereum?.removeListener('accountsChanged', callback)
+    }
+  }, [])
+
+  useEffect(() => {
+    // eslint-disable-next-line prettier/prettier
+    ;(async () => {
+      if (!window.ethereum) return
+
+      const data = localStorage.getItem(LOGIN_DATA_STORAGE_KEY)
+      if (!data) return
+
+      // const provider = new ethers.providers.Web3Provider(window.ethereum)
+      // const accounts = await provider.listAccounts()
+      // const signer = provider.getSigner()
+      // const address = await signer.getAddress()
+
+      setLoginData(JSON.parse(data) as LoginDataType)
+    })()
   }, [])
 
   const ctx: ILoginContextProps = {
